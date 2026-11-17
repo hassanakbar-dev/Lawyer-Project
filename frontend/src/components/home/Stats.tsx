@@ -24,19 +24,19 @@ export default function Stats() {
 
   return (
     <section className="relative z-10 -mt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 gap-6 rounded-2xl border border-slate-800/80 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-xl sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col border-b border-slate-800 pb-6 last:border-b-0 sm:border-b-0 sm:border-r sm:pr-6 last:border-r-0"
+            className="flex flex-col border-b border-slate-100 pb-6 last:border-b-0 sm:border-b-0 sm:border-r sm:pr-6 last:border-r-0"
           >
-            <span className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 font-serif">
+            <span className="text-3xl sm:text-4xl font-extrabold text-amber-600 font-serif">
               {item.value}
             </span>
-            <span className="mt-2 text-sm font-semibold text-white">
+            <span className="mt-2 text-sm font-bold text-slate-900">
               {item.label}
             </span>
-            <span className="mt-1 text-xs text-slate-400 leading-normal">
+            <span className="mt-1 text-xs text-slate-500 leading-normal">
               {item.subtext}
             </span>
           </div>

@@ -62,7 +62,7 @@ export default function RootLayout({
       <head>
         <LegalSchema />
       </head>
-      <body className="min-h-screen bg-slate-950 text-slate-100 antialiased font-sans selection:bg-amber-600 selection:text-white">
+      <body className="min-h-screen bg-slate-50 text-slate-900 antialiased font-sans selection:bg-amber-600 selection:text-white">
         {children}
       </body>
     </html>

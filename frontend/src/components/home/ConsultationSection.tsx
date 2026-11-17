@@ -23,30 +23,27 @@ import {
 } from "lucide-react";
 
 export default function ConsultationSection() {
-  // Tab State: 'message' (Quick Inquiry) | 'consultation' (Meeting / Google Meet)
   const [activeTab, setActiveTab] = useState<"message" | "consultation">("message");
-
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [inquiryId, setInquiryId] = useState<number | null>(null);
   const [meetingLink, setMeetingLink] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  // Calendar State for 'consultation' tab
+  // Calendar State
   const [selectedDay, setSelectedDay] = useState<number>(18);
   const [currentMonth, setCurrentMonth] = useState<number>(10); // 10 = November
   const [currentYear, setCurrentYear] = useState<number>(2026);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState<string>("11:00 AM - 12:00 PM");
   const [timezone, setTimezone] = useState<string>("PKT (UTC+5) - Pakistan Time");
 
-  // Form State
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     practiceArea: "Corporate & Commercial Law",
     urgency: "Standard",
-    consultationMode: "google_meet", // 'google_meet' | 'in_person' | 'phone'
+    consultationMode: "google_meet",
     summary: "",
   });
 
@@ -145,47 +142,47 @@ export default function ConsultationSection() {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-slate-900/60 border-t border-slate-800">
+    <section id="contact" className="py-24 lg:py-32 bg-slate-50 border-t border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-12">
           
           {/* Left Column: Office & Firm Contact (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-600"></span>
               Confidential Intake
             </div>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl font-serif">
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl font-serif">
               Get in Touch with Our Advocates
             </h2>
-            <p className="mt-4 text-sm text-slate-300 leading-relaxed">
+            <p className="mt-4 text-sm text-slate-600 leading-relaxed">
               Whether you need to send a quick legal message or schedule an in-depth video consultation via{" "}
-              <strong className="text-amber-400">Google Meet</strong>, our partners are ready to assist.
+              <strong className="text-amber-700">Google Meet</strong>, our partners are ready to assist.
             </p>
 
             <div className="mt-8 space-y-6 text-sm">
-              <div className="rounded-xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-slate-900 to-slate-950 p-4">
+              <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-4 shadow-xs">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500 text-slate-950">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-600 text-white shadow-xs">
                     <Video className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-white">Virtual Google Meet Chambers</h3>
-                    <p className="text-xs text-amber-400">Nationwide & Worldwide Online Meetings</p>
+                    <h3 className="text-sm font-bold text-slate-900">Virtual Google Meet Chambers</h3>
+                    <p className="text-xs text-amber-800 font-semibold">Nationwide & Worldwide Online Meetings</p>
                   </div>
                 </div>
-                <p className="mt-2.5 text-xs text-slate-300 leading-relaxed">
+                <p className="mt-2.5 text-xs text-slate-600 leading-relaxed">
                   Fast, encrypted HD video consultations with senior trial counsel. Choose the &ldquo;Book Consultation&rdquo; tab to pick a slot.
                 </p>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white text-amber-700 border border-slate-200 shadow-xs">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">Main Office Chambers</h3>
-                  <p className="mt-1 text-xs text-slate-400 leading-relaxed">
+                  <h3 className="font-semibold text-slate-900">Main Office Chambers</h3>
+                  <p className="mt-1 text-xs text-slate-600 leading-relaxed">
                     Apex Legal Tower, 100 Constitution Ave, 14th Floor<br />
                     Financial District, New York, NY 10005
                   </p>
@@ -193,12 +190,12 @@ export default function ConsultationSection() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white text-amber-700 border border-slate-200 shadow-xs">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">Telephone Helpline</h3>
-                  <p className="mt-1 text-xs text-slate-400">
+                  <h3 className="font-semibold text-slate-900">Telephone Helpline</h3>
+                  <p className="mt-1 text-xs text-slate-600">
                     Toll-Free: +1 (800) 555-0199<br />
                     Chambers Direct: +1 (212) 555-0144
                   </p>
@@ -206,12 +203,12 @@ export default function ConsultationSection() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white text-amber-700 border border-slate-200 shadow-xs">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">Direct Email Intake</h3>
-                  <p className="mt-1 text-xs text-slate-400">
+                  <h3 className="font-semibold text-slate-900">Direct Email Intake</h3>
+                  <p className="mt-1 text-xs text-slate-600">
                     intake@apexlegal.com
                   </p>
                 </div>
@@ -219,7 +216,7 @@ export default function ConsultationSection() {
             </div>
 
             {/* Office Image */}
-            <div className="mt-8 relative h-44 w-full overflow-hidden rounded-xl border border-slate-800">
+            <div className="mt-8 relative h-44 w-full overflow-hidden rounded-xl border border-slate-200 shadow-md">
               <Image
                 src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80"
                 alt="Law Firm Conference Chambers"
@@ -227,8 +224,8 @@ export default function ConsultationSection() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
-              <div className="absolute bottom-3 left-4 text-xs font-semibold text-amber-400">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+              <div className="absolute bottom-3 left-4 text-xs font-semibold text-white">
                 Chamber Conference Rooms & Virtual Video Hub
               </div>
             </div>
@@ -236,17 +233,17 @@ export default function ConsultationSection() {
 
           {/* Right Column: Dual-Tab Interactive Form (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/90 p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl">
               
               {/* TOP TABS: Quick Message vs Book Consultation */}
-              <div className="flex rounded-xl bg-slate-900 p-1 border border-slate-800 mb-6">
+              <div className="flex rounded-xl bg-slate-100 p-1 border border-slate-200 mb-6">
                 <button
                   type="button"
                   onClick={() => { setActiveTab("message"); setSubmitted(false); }}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-xs font-bold transition-all ${
                     activeTab === "message"
-                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-amber-600 text-white shadow-md shadow-amber-600/20"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   <MessageSquare className="h-4 w-4" />
@@ -258,8 +255,8 @@ export default function ConsultationSection() {
                   onClick={() => { setActiveTab("consultation"); setSubmitted(false); }}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-xs font-bold transition-all ${
                     activeTab === "consultation"
-                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-amber-600 text-white shadow-md shadow-amber-600/20"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   <Video className="h-4 w-4" />
@@ -270,86 +267,86 @@ export default function ConsultationSection() {
               {submitted ? (
                 /* Submission Confirmation View */
                 <div className="py-8 text-center">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">
                     <CheckCircle className="h-8 w-8" />
                   </div>
 
-                  <h4 className="mt-4 text-2xl font-bold text-white font-serif">
+                  <h4 className="mt-4 text-2xl font-bold text-slate-900 font-serif">
                     {activeTab === "message"
                       ? "Message Received Successfully!"
                       : "Consultation Scheduled Successfully!"}
                   </h4>
 
                   {inquiryId && (
-                    <div className="mt-2 text-xs text-slate-400">
-                      Inquiry Tracking ID: <span className="font-mono text-amber-400">#{inquiryId}</span>
+                    <div className="mt-2 text-xs text-slate-500">
+                      Inquiry Tracking ID: <span className="font-mono text-amber-700 font-bold">#{inquiryId}</span>
                     </div>
                   )}
 
                   {/* If Quick Message was submitted */}
                   {activeTab === "message" && (
-                    <p className="mt-4 text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                      Thank you, <strong className="text-white">{formData.name}</strong>. Your message has been routed to our intake advocates. We will reach back to you shortly at{" "}
-                      <span className="text-amber-400 font-semibold">{formData.email || formData.phone}</span>.
+                    <p className="mt-4 text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                      Thank you, <strong className="text-slate-900">{formData.name}</strong>. Your message has been routed to our intake advocates. We will reach back to you shortly at{" "}
+                      <span className="text-amber-700 font-semibold">{formData.email || formData.phone}</span>.
                     </p>
                   )}
 
                   {/* If Meeting with Google Meet was submitted */}
                   {activeTab === "consultation" && formData.consultationMode === "google_meet" && (
-                    <div className="mt-6 rounded-xl border-2 border-amber-500/40 bg-gradient-to-br from-slate-900 to-slate-950 p-6 text-left shadow-xl">
+                    <div className="mt-6 rounded-xl border-2 border-amber-300 bg-amber-50/60 p-6 text-left shadow-lg">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500 text-slate-950">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-600 text-white">
                             <Video className="h-5 w-5" />
                           </div>
                           <div>
-                            <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                            <span className="text-xs font-bold uppercase tracking-wider text-amber-800">
                               Confirmed Video Session
                             </span>
-                            <h5 className="text-base font-bold text-white font-serif">
+                            <h5 className="text-base font-bold text-slate-900 font-serif">
                               Google Meet Consultation Room
                             </h5>
                           </div>
                         </div>
-                        <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-400 border border-emerald-500/20">
+                        <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800 border border-emerald-300">
                           Confirmed
                         </span>
                       </div>
 
-                      <div className="mt-4 space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                      <div className="mt-4 space-y-2 text-xs text-slate-700 border-t border-amber-200/60 pt-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-slate-400">Scheduled Date:</span>
-                          <span className="font-semibold text-white">{formattedDateString}</span>
+                          <span className="text-slate-500">Scheduled Date:</span>
+                          <span className="font-semibold text-slate-900">{formattedDateString}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-slate-400">Selected Time Window:</span>
-                          <span className="font-semibold text-white">{formattedTimeString}</span>
+                          <span className="text-slate-500">Selected Time Window:</span>
+                          <span className="font-semibold text-slate-900">{formattedTimeString}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-slate-400">Client Email:</span>
-                          <span className="font-semibold text-white">{formData.email}</span>
+                          <span className="text-slate-500">Client Email:</span>
+                          <span className="font-semibold text-slate-900">{formData.email}</span>
                         </div>
                       </div>
 
                       {meetingLink && (
-                        <div className="mt-5 rounded-lg border border-slate-700 bg-slate-950 p-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-                          <span className="font-mono text-xs text-amber-300 truncate max-w-xs">
+                        <div className="mt-5 rounded-lg border border-slate-300 bg-white p-3 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
+                          <span className="font-mono text-xs text-amber-900 font-semibold truncate max-w-xs">
                             {meetingLink}
                           </span>
                           <div className="flex items-center gap-2 flex-shrink-0">
                             <button
                               type="button"
                               onClick={copyMeetLink}
-                              className="inline-flex items-center gap-1 rounded bg-slate-800 px-3 py-1.5 text-xs text-slate-200 hover:bg-slate-700"
+                              className="inline-flex items-center gap-1 rounded bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-200 border border-slate-200"
                             >
-                              {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
+                              {copied ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
                               <span>{copied ? "Copied" : "Copy Link"}</span>
                             </button>
                             <a
                               href={meetingLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 rounded bg-amber-500 px-3.5 py-1.5 text-xs font-bold text-slate-950 hover:bg-amber-400"
+                              className="inline-flex items-center gap-1 rounded bg-amber-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-amber-500 shadow-xs"
                             >
                               <span>Join Google Meet</span>
                               <ExternalLink className="h-3.5 w-3.5" />
@@ -362,16 +359,16 @@ export default function ConsultationSection() {
 
                   {/* If Meeting with In-Chambers or Phone was submitted */}
                   {activeTab === "consultation" && formData.consultationMode !== "google_meet" && (
-                    <p className="mt-4 text-sm text-slate-300 max-w-md mx-auto">
+                    <p className="mt-4 text-sm text-slate-600 max-w-md mx-auto">
                       Thank you. We have logged your request for an {formData.consultationMode === "in_person" ? "in-chambers meeting" : "advisory phone call"} on{" "}
-                      <span className="text-amber-400 font-semibold">{formattedDateString}</span> at{" "}
-                      <span className="text-amber-400 font-semibold">{formattedTimeString}</span>.
+                      <span className="text-amber-700 font-semibold">{formattedDateString}</span> at{" "}
+                      <span className="text-amber-700 font-semibold">{formattedTimeString}</span>.
                     </p>
                   )}
 
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-8 inline-flex rounded-lg bg-slate-800 px-6 py-2.5 text-xs font-bold text-slate-200 hover:bg-slate-700"
+                    className="mt-8 inline-flex rounded-lg bg-slate-100 px-6 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-200 border border-slate-300"
                   >
                     Submit Another Request
                   </button>
@@ -380,19 +377,19 @@ export default function ConsultationSection() {
                 /* Active Form View */
                 <form onSubmit={handleSubmit} className="space-y-5">
                   
-                  {/* TAB 1: QUICK MESSAGE (Simple 1-minute Contact Form) */}
+                  {/* TAB 1: QUICK MESSAGE */}
                   {activeTab === "message" && (
                     <div className="space-y-4">
-                      <div className="border-b border-slate-800 pb-3">
-                        <h4 className="text-sm font-bold text-white">Send A General Inquiry</h4>
-                        <p className="text-xs text-slate-400 mt-0.5">
+                      <div className="border-b border-slate-100 pb-3">
+                        <h4 className="text-sm font-bold text-slate-900">Send A General Inquiry</h4>
+                        <p className="text-xs text-slate-500 mt-0.5">
                           No appointment required. Ask about legal fees, preliminary questions, or request general information.
                         </p>
                       </div>
 
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div>
-                          <label className="block text-xs font-medium text-slate-300 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             Full Legal Name *
                           </label>
                           <input
@@ -401,12 +398,12 @@ export default function ConsultationSection() {
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             placeholder="John Doe"
-                            className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                            className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-medium text-slate-300 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             Contact Telephone *
                           </label>
                           <input
@@ -415,14 +412,14 @@ export default function ConsultationSection() {
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             placeholder="+1 (555) 000-0000"
-                            className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                            className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                           />
                         </div>
                       </div>
 
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div>
-                          <label className="block text-xs font-medium text-slate-300 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             Email Address *
                           </label>
                           <input
@@ -431,18 +428,18 @@ export default function ConsultationSection() {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="john@example.com"
-                            className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                            className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-medium text-slate-300 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             Legal Practice Area
                           </label>
                           <select
                             value={formData.practiceArea}
                             onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
-                            className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                            className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                           >
                             <option>Corporate & Commercial Law</option>
                             <option>Criminal Defense Litigation</option>
@@ -456,7 +453,7 @@ export default function ConsultationSection() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-medium text-slate-300 mb-1">
+                        <label className="block text-xs font-medium text-slate-700 mb-1">
                           Your Message / Inquiry *
                         </label>
                         <textarea
@@ -465,14 +462,14 @@ export default function ConsultationSection() {
                           value={formData.summary}
                           onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
                           placeholder="How can our law firm assist you? Feel free to ask any preliminary question..."
-                          className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                          className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                         ></textarea>
                       </div>
 
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-amber-500/20 transition-all hover:from-amber-400 hover:to-amber-500 disabled:opacity-50"
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-600 to-amber-700 py-3.5 text-sm font-bold text-white shadow-md shadow-amber-600/20 transition-all hover:from-amber-500 hover:to-amber-600 disabled:opacity-50"
                       >
                         <span>{isSubmitting ? "Sending Message..." : "Send Message to Firm"}</span>
                         <Send className="h-4 w-4" />
@@ -486,7 +483,7 @@ export default function ConsultationSection() {
                       
                       {/* Step A: Mode Selector */}
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
                           1. Choose Consultation Mode *
                         </label>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -495,13 +492,13 @@ export default function ConsultationSection() {
                             onClick={() => setFormData({ ...formData, consultationMode: "google_meet" })}
                             className={`flex flex-col items-center justify-center rounded-xl border p-3.5 text-center transition-all ${
                               formData.consultationMode === "google_meet"
-                                ? "border-amber-500 bg-amber-500/15 text-white shadow-lg shadow-amber-500/10 ring-1 ring-amber-500"
-                                : "border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700"
+                                ? "border-amber-500 bg-amber-50 text-amber-900 ring-2 ring-amber-500 shadow-xs"
+                                : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
                             }`}
                           >
-                            <Video className={`h-5 w-5 mb-1.5 ${formData.consultationMode === "google_meet" ? "text-amber-400" : "text-slate-400"}`} />
-                            <span className="text-xs font-bold">Google Meet</span>
-                            <span className="text-[10px] text-amber-400 mt-0.5">Online Video Room</span>
+                            <Video className={`h-5 w-5 mb-1.5 ${formData.consultationMode === "google_meet" ? "text-amber-600" : "text-slate-400"}`} />
+                            <span className="text-xs font-bold text-slate-900">Google Meet</span>
+                            <span className="text-[10px] text-amber-700 mt-0.5 font-medium">Online Video Room</span>
                           </button>
 
                           <button
@@ -509,13 +506,13 @@ export default function ConsultationSection() {
                             onClick={() => setFormData({ ...formData, consultationMode: "in_person" })}
                             className={`flex flex-col items-center justify-center rounded-xl border p-3.5 text-center transition-all ${
                               formData.consultationMode === "in_person"
-                                ? "border-amber-500 bg-amber-500/15 text-white shadow-lg shadow-amber-500/10 ring-1 ring-amber-500"
-                                : "border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700"
+                                ? "border-amber-500 bg-amber-50 text-amber-900 ring-2 ring-amber-500 shadow-xs"
+                                : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
                             }`}
                           >
-                            <Building className={`h-5 w-5 mb-1.5 ${formData.consultationMode === "in_person" ? "text-amber-400" : "text-slate-400"}`} />
-                            <span className="text-xs font-bold">In-Chambers</span>
-                            <span className="text-[10px] text-slate-400 mt-0.5">New York Chambers</span>
+                            <Building className={`h-5 w-5 mb-1.5 ${formData.consultationMode === "in_person" ? "text-amber-600" : "text-slate-400"}`} />
+                            <span className="text-xs font-bold text-slate-900">In-Chambers</span>
+                            <span className="text-[10px] text-slate-500 mt-0.5">New York Chambers</span>
                           </button>
 
                           <button
@@ -523,40 +520,40 @@ export default function ConsultationSection() {
                             onClick={() => setFormData({ ...formData, consultationMode: "phone" })}
                             className={`flex flex-col items-center justify-center rounded-xl border p-3.5 text-center transition-all ${
                               formData.consultationMode === "phone"
-                                ? "border-amber-500 bg-amber-500/15 text-white shadow-lg shadow-amber-500/10 ring-1 ring-amber-500"
-                                : "border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700"
+                                ? "border-amber-500 bg-amber-50 text-amber-900 ring-2 ring-amber-500 shadow-xs"
+                                : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
                             }`}
                           >
-                            <Phone className={`h-5 w-5 mb-1.5 ${formData.consultationMode === "phone" ? "text-amber-400" : "text-slate-400"}`} />
-                            <span className="text-xs font-bold">Phone Call</span>
-                            <span className="text-[10px] text-slate-400 mt-0.5">Direct Advisory Call</span>
+                            <Phone className={`h-5 w-5 mb-1.5 ${formData.consultationMode === "phone" ? "text-amber-600" : "text-slate-400"}`} />
+                            <span className="text-xs font-bold text-slate-900">Phone Call</span>
+                            <span className="text-[10px] text-slate-500 mt-0.5">Direct Advisory Call</span>
                           </button>
                         </div>
                       </div>
 
                       {/* Step B: Visual Calendar & Time Slots */}
-                      <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 sm:p-5">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                      <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
                           <div>
-                            <label className="text-xs font-semibold uppercase tracking-wider text-white flex items-center gap-2">
-                              <CalendarIcon className="h-4 w-4 text-amber-400" />
+                            <label className="text-xs font-semibold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                              <CalendarIcon className="h-4 w-4 text-amber-600" />
                               2. Select Date On Calendar *
                             </label>
-                            <p className="text-[11px] text-slate-400 mt-0.5">
-                              Selected: <span className="font-semibold text-amber-400">{formattedDateString}</span>
+                            <p className="text-[11px] text-slate-500 mt-0.5">
+                              Selected: <span className="font-semibold text-amber-700">{formattedDateString}</span>
                             </p>
                           </div>
 
                           {/* Timezone Selector */}
-                          <div className="flex items-center gap-1.5 bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200">
-                            <Globe className="h-3.5 w-3.5 text-amber-400 flex-shrink-0" />
+                          <div className="flex items-center gap-1.5 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs text-slate-700 shadow-xs">
+                            <Globe className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
                             <select
                               value={timezone}
                               onChange={(e) => setTimezone(e.target.value)}
-                              className="bg-transparent text-xs text-white focus:outline-none cursor-pointer"
+                              className="bg-transparent text-xs text-slate-900 focus:outline-none cursor-pointer"
                             >
                               {timezones.map((tz) => (
-                                <option key={tz} value={tz} className="bg-slate-900 text-white">
+                                <option key={tz} value={tz} className="bg-white text-slate-900">
                                   {tz}
                                 </option>
                               ))}
@@ -566,14 +563,14 @@ export default function ConsultationSection() {
 
                         {/* Month Switcher Header */}
                         <div className="mt-4 flex items-center justify-between px-2">
-                          <span className="text-sm font-bold text-white font-serif">
+                          <span className="text-sm font-bold text-slate-900 font-serif">
                             {monthNames[currentMonth]} {currentYear}
                           </span>
                           <div className="flex items-center gap-1">
                             <button
                               type="button"
                               onClick={handlePrevMonth}
-                              className="p-1 rounded hover:bg-slate-800 text-slate-400 hover:text-white"
+                              className="p-1 rounded hover:bg-slate-200 text-slate-600 hover:text-slate-900"
                               aria-label="Previous Month"
                             >
                               <ChevronLeft className="h-4 w-4" />
@@ -581,7 +578,7 @@ export default function ConsultationSection() {
                             <button
                               type="button"
                               onClick={handleNextMonth}
-                              className="p-1 rounded hover:bg-slate-800 text-slate-400 hover:text-white"
+                              className="p-1 rounded hover:bg-slate-200 text-slate-600 hover:text-slate-900"
                               aria-label="Next Month"
                             >
                               <ChevronRight className="h-4 w-4" />
@@ -616,8 +613,8 @@ export default function ConsultationSection() {
                                 onClick={() => setSelectedDay(dayNum)}
                                 className={`h-8 w-full rounded-lg text-xs font-semibold transition-all flex items-center justify-center ${
                                   isSelected
-                                    ? "bg-amber-500 text-slate-950 shadow-md font-bold scale-105"
-                                    : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                                    ? "bg-amber-600 text-white shadow-md font-bold scale-105"
+                                    : "text-slate-700 hover:bg-slate-200 hover:text-slate-900"
                                 }`}
                               >
                                 {dayNum}
@@ -627,9 +624,9 @@ export default function ConsultationSection() {
                         </div>
 
                         {/* Available Time Slots */}
-                        <div className="mt-6 border-t border-slate-800 pt-4">
-                          <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2.5 flex items-center gap-2">
-                            <Clock className="h-3.5 w-3.5 text-amber-400" />
+                        <div className="mt-6 border-t border-slate-200 pt-4">
+                          <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2.5 flex items-center gap-2">
+                            <Clock className="h-3.5 w-3.5 text-amber-600" />
                             Available Time Slots ({timezone.split(" - ")[0]}) *
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -642,8 +639,8 @@ export default function ConsultationSection() {
                                   onClick={() => setSelectedTimeSlot(slot)}
                                   className={`rounded-lg border px-2.5 py-2 text-center text-xs font-medium transition-all ${
                                     isSelected
-                                      ? "border-amber-500 bg-amber-500/20 text-amber-300 font-bold"
-                                      : "border-slate-800 bg-slate-950 text-slate-300 hover:border-slate-700"
+                                      ? "border-amber-500 bg-amber-50 text-amber-900 font-bold ring-1 ring-amber-500 shadow-xs"
+                                      : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
                                   }`}
                                 >
                                   {slot}
@@ -658,7 +655,7 @@ export default function ConsultationSection() {
                       <div className="space-y-4">
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div>
-                            <label className="block text-xs font-medium text-slate-300 mb-1">
+                            <label className="block text-xs font-medium text-slate-700 mb-1">
                               Full Legal Name *
                             </label>
                             <input
@@ -667,12 +664,12 @@ export default function ConsultationSection() {
                               value={formData.name}
                               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                               placeholder="Jonathan Reynolds"
-                              className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                              className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-medium text-slate-300 mb-1">
+                            <label className="block text-xs font-medium text-slate-700 mb-1">
                               Contact Telephone *
                             </label>
                             <input
@@ -681,14 +678,14 @@ export default function ConsultationSection() {
                               value={formData.phone}
                               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                               placeholder="+1 (555) 000-0000"
-                              className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                              className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                             />
                           </div>
                         </div>
 
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div>
-                            <label className="block text-xs font-medium text-slate-300 mb-1">
+                            <label className="block text-xs font-medium text-slate-700 mb-1">
                               Email Address (for Google Meet Room) *
                             </label>
                             <input
@@ -697,18 +694,18 @@ export default function ConsultationSection() {
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               placeholder="jonathan@example.com"
-                              className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                              className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-medium text-slate-300 mb-1">
+                            <label className="block text-xs font-medium text-slate-700 mb-1">
                               Practice Area
                             </label>
                             <select
                               value={formData.practiceArea}
                               onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
-                              className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                              className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                             >
                               <option>Corporate & Commercial Law</option>
                               <option>Criminal Defense Litigation</option>
@@ -721,7 +718,7 @@ export default function ConsultationSection() {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-medium text-slate-300 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             Case Background / Consultation Goals *
                           </label>
                           <textarea
@@ -730,7 +727,7 @@ export default function ConsultationSection() {
                             value={formData.summary}
                             onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
                             placeholder="Please outline the key points of your legal matter..."
-                            className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                            className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                           ></textarea>
                         </div>
                       </div>
@@ -738,7 +735,7 @@ export default function ConsultationSection() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-amber-500/20 transition-all hover:from-amber-400 hover:to-amber-500 disabled:opacity-50"
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-600 to-amber-700 py-3.5 text-sm font-bold text-white shadow-md shadow-amber-600/20 transition-all hover:from-amber-500 hover:to-amber-600 disabled:opacity-50"
                       >
                         <span>
                           {isSubmitting

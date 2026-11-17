@@ -50,32 +50,32 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-2.5">
               <li>
-                <Link href="/practice-areas" className="hover:text-amber-400 transition-colors">
+                <Link href="/services" className="hover:text-amber-400 transition-colors">
                   Corporate & Commercial Law
                 </Link>
               </li>
               <li>
-                <Link href="/practice-areas" className="hover:text-amber-400 transition-colors">
+                <Link href="/services" className="hover:text-amber-400 transition-colors">
                   Criminal Defense Litigation
                 </Link>
               </li>
               <li>
-                <Link href="/practice-areas" className="hover:text-amber-400 transition-colors">
+                <Link href="/services" className="hover:text-amber-400 transition-colors">
                   Family & Custody Law
                 </Link>
               </li>
               <li>
-                <Link href="/practice-areas" className="hover:text-amber-400 transition-colors">
+                <Link href="/services" className="hover:text-amber-400 transition-colors">
                   Civil Dispute Resolution
                 </Link>
               </li>
               <li>
-                <Link href="/practice-areas" className="hover:text-amber-400 transition-colors">
+                <Link href="/services" className="hover:text-amber-400 transition-colors">
                   Real Estate & Property
                 </Link>
               </li>
               <li>
-                <Link href="/practice-areas" className="hover:text-amber-400 transition-colors">
+                <Link href="/services" className="hover:text-amber-400 transition-colors">
                   Intellectual Property
                 </Link>
               </li>
@@ -94,23 +94,28 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/practice-areas" className="hover:text-amber-400 transition-colors">
-                  Practice Disciplines
+                <Link href="/services" className="hover:text-amber-400 transition-colors">
+                  Legal Services
                 </Link>
               </li>
               <li>
-                <Link href="/attorneys" className="hover:text-amber-400 transition-colors">
-                  Senior Advocates
+                <Link href="/blogs" className="hover:text-amber-400 transition-colors">
+                  Legal Insights & Blogs
                 </Link>
               </li>
               <li>
-                <Link href="/case-results" className="hover:text-amber-400 transition-colors">
-                  Case Results & Verdicts
+                <Link href="/faq" className="hover:text-amber-400 transition-colors">
+                  Frequently Asked Questions
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-amber-400 transition-colors">
-                  Case Intake & Consultation
+                  Contact & Consultation
+                </Link>
+              </li>
+              <li>
+                <Link href="/login" className="hover:text-amber-400 transition-colors text-amber-500 font-medium">
+                  Client & Staff Login Portal →
                 </Link>
               </li>
             </ul>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail, Award } from "lucide-react";
+import { Mail, Award, CheckCircle, Scale } from "lucide-react";
 
 export default function AttorneyTeam() {
   const attorneys = [
@@ -8,43 +8,66 @@ export default function AttorneyTeam() {
       role: "Managing Partner & Senior Trial Advocate",
       image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80",
       education: "Harvard Law School, J.D. (Magna Cum Laude)",
-      bar: "New York & Federal Bar Admission",
+      bar: "New York & U.S. Supreme Court Bar",
       experience: "25+ Years Experience",
       specialty: "High-Stakes Commercial Litigation & Corporate Defense",
+      email: "sterling@apexlegal.com",
     },
     {
       name: "Victoria Hayes, Esq.",
       role: "Senior Partner - Criminal Defense & Appeals",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
       education: "Columbia Law School, J.D.",
-      bar: "State & Supreme Court Bar Admission",
+      bar: "State Supreme Bench & SDNY Federal Bar",
       experience: "19+ Years Experience",
       specialty: "Federal Criminal Litigation & White-Collar Defense",
+      email: "hayes@apexlegal.com",
     },
     {
       name: "Marcus Vance, Esq.",
       role: "Partner - Corporate Transactions & IP",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
       education: "Yale Law School, LL.M.",
-      bar: "New York & International Arbitration Bar",
+      bar: "Delaware Chancery & International Arbitration",
       experience: "16+ Years Experience",
       specialty: "Cross-Border Mergers, IP Portfolios & Venture Law",
+      email: "vance@apexlegal.com",
+    },
+    {
+      name: "Elena Rostova, Esq.",
+      role: "Partner - Matrimonial & Private Wealth",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+      education: "NYU School of Law, J.D.",
+      bar: "New York Matrimonial & Family Law Bar",
+      experience: "14+ Years Experience",
+      specialty: "Forensic Asset Tracing, Trusts & High-Net-Worth Divorce",
+      email: "rostova@apexlegal.com",
+    },
+    {
+      name: "Julian Thorne, Esq.",
+      role: "Senior Counsel - Real Estate & Regulatory",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      education: "Georgetown University Law Center, J.D.",
+      bar: "District of Columbia & New York Bar",
+      experience: "18+ Years Experience",
+      specialty: "Commercial Development, Zoning Approvals & Title Litigation",
+      email: "thorne@apexlegal.com",
     },
   ];
 
   return (
-    <section id="attorneys" className="py-24 lg:py-32 bg-slate-950">
+    <section id="attorneys" className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-500">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+          <div className="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-800">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-600"></span>
             Distinguished Counsel
           </div>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl font-serif">
-            Meet Our Senior Advocates
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl font-serif">
+            Meet Our Senior Advocates & Partners
           </h2>
-          <p className="mt-4 text-base text-slate-400">
-            Seasoned courtroom veterans and strategic legal advisors dedicated to achieving unparalleled outcomes.
+          <p className="mt-4 text-base text-slate-600 leading-relaxed">
+            Every client at Apex Legal is represented directly by seasoned courtroom veterans who command respect before state and federal benches.
           </p>
         </div>
 
@@ -52,68 +75,66 @@ export default function AttorneyTeam() {
           {attorneys.map((attorney, index) => (
             <div
               key={index}
-              className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 transition-all duration-300 hover:border-amber-500/40 hover:bg-slate-900"
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:border-amber-400 hover:shadow-xl flex flex-col justify-between"
             >
-              {/* Attorney Image */}
-              <div className="relative h-96 w-full overflow-hidden bg-slate-800">
-                <Image
-                  src={attorney.image}
-                  alt={attorney.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                
-                {/* Experience Badge */}
-                <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-lg bg-slate-950/90 px-3 py-1.5 text-xs font-bold text-amber-400 backdrop-blur-md border border-amber-500/30">
-                  <Award className="h-3.5 w-3.5" />
-                  <span>{attorney.experience}</span>
+              <div>
+                {/* Attorney Image */}
+                <div className="relative h-96 w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src={attorney.image}
+                    alt={attorney.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                  
+                  {/* Experience Badge */}
+                  <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-1.5 text-xs font-bold text-amber-800 shadow-md border border-slate-200">
+                    <Award className="h-3.5 w-3.5 text-amber-600" />
+                    <span>{attorney.experience}</span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 font-serif group-hover:text-amber-700 transition-colors">
+                    {attorney.name}
+                  </h3>
+                  <div className="mt-1 text-xs font-semibold text-amber-700 uppercase tracking-wide">
+                    {attorney.role}
+                  </div>
+
+                  <p className="mt-4 text-xs text-slate-600 leading-relaxed">
+                    <strong className="text-slate-800">Specialty: </strong>
+                    {attorney.specialty}
+                  </p>
+
+                  <div className="mt-5 space-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <Scale className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
+                      <span className="font-medium text-slate-800">{attorney.education}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
+                      <span>{attorney.bar}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Attorney Info */}
-              <div className="p-7">
-                <h3 className="text-xl font-bold text-white font-serif group-hover:text-amber-400 transition-colors">
-                  {attorney.name}
-                </h3>
-                <p className="mt-1 text-xs font-semibold text-amber-500">
-                  {attorney.role}
-                </p>
-
-                <p className="mt-4 text-xs font-medium text-slate-300">
-                  {attorney.specialty}
-                </p>
-
-                <div className="mt-5 space-y-1.5 border-t border-slate-800/80 pt-4 text-[11px] text-slate-400">
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-slate-300">Education:</span>
-                    <span>{attorney.education}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-slate-300">Bar:</span>
-                    <span>{attorney.bar}</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex items-center justify-between border-t border-slate-800/80 pt-4">
-                  <a
-                    href="#contact"
-                    className="text-xs font-bold text-amber-400 hover:text-amber-300"
-                  >
-                    Direct Consultation →
-                  </a>
-                  <div className="flex items-center gap-3 text-slate-400">
-                    <a href="#contact" className="hover:text-amber-400 transition-colors" aria-label="Direct Email">
-                      <Mail className="h-4 w-4" />
-                    </a>
-                    <a href="#contact" className="hover:text-amber-400 transition-colors" aria-label="Professional Profile">
-                      <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.77v8.37H6.46V10.9M7.85 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24Z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+              {/* Footer Action */}
+              <div className="border-t border-slate-100 px-6 py-4 bg-slate-50 flex items-center justify-between text-xs">
+                <a
+                  href={`mailto:${attorney.email}`}
+                  className="inline-flex items-center gap-1.5 text-slate-600 hover:text-amber-700 font-medium transition-colors"
+                >
+                  <Mail className="h-3.5 w-3.5 text-amber-600" />
+                  <span>{attorney.email}</span>
+                </a>
+                <span className="text-[10px] font-bold text-amber-800 uppercase tracking-wider">
+                  Partner
+                </span>
               </div>
             </div>
           ))}

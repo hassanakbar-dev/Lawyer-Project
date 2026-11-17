@@ -30,24 +30,24 @@ export default function FirmGallery() {
   ];
 
   return (
-    <section className="py-24 bg-slate-950 border-t border-slate-800/80">
+    <section className="py-24 bg-slate-50 border-t border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-500">
-              <Camera className="h-4 w-4" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-800">
+              <Camera className="h-4 w-4 text-amber-600" />
               Inside Our Practice
             </div>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl font-serif">
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl font-serif">
               Our Chambers & Trial Environment
             </h2>
-            <p className="mt-3 text-sm text-slate-400 max-w-2xl">
+            <p className="mt-3 text-sm text-slate-600 max-w-2xl">
               Where rigorous legal scholarship, extensive forensic research, and high-impact strategy converge.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-amber-400 font-semibold">
-            <MapPin className="h-4 w-4" />
+          <div className="flex items-center gap-2 text-xs text-amber-800 font-semibold bg-amber-50 border border-amber-200 px-3.5 py-1.5 rounded-lg">
+            <MapPin className="h-4 w-4 text-amber-600" />
             <span>Chambers at 100 Constitution Ave, Suite 400</span>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function FirmGallery() {
           {images.map((item, index) => (
             <div
               key={index}
-              className={`group relative h-80 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 ${item.span}`}
+              className={`group relative h-80 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md ${item.span}`}
             >
               <Image
                 src={item.image}
@@ -65,7 +65,7 @@ export default function FirmGallery() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
 
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
