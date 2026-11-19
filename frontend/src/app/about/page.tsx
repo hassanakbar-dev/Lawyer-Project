@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -148,20 +149,64 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Page Header Banner */}
-        <section className="relative overflow-hidden border-b border-slate-200 bg-white py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-2 text-xs font-semibold text-amber-700 uppercase tracking-widest mb-4">
-              <Link href="/" className="hover:text-amber-800">Home</Link>
-              <span>/</span>
-              <span className="text-slate-500">About Our Firm</span>
+        {/* Page Header Banner with Light Theme Background Image */}
+        <section className="relative overflow-hidden border-b border-slate-200 py-20 lg:py-28 bg-[#f8fafc] text-slate-900">
+          {/* Natural Background Image with Light Wash (No Black / No Dark Color) */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2000&q=85"
+              alt="Supreme Court & Legal Jurisprudence Heritage"
+              fill
+              priority
+              unoptimized
+              sizes="100vw"
+              className="object-cover object-right lg:object-center opacity-30"
+            />
+            {/* Pure Light Wash - Crystal Clear Readability Without Any Dark/Black Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/85 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-slate-50/80"></div>
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              {/* Breadcrumb with Warm Amber Accents */}
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest mb-4">
+                <Link href="/" className="text-amber-700 hover:text-amber-800 transition-colors">
+                  Home
+                </Link>
+                <span className="text-slate-400">/</span>
+                <span className="text-slate-600">About Our Firm</span>
+              </div>
+
+              {/* Majestic Headline (Deep Navy & Royal Amber) */}
+              <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl font-serif leading-[1.12]">
+                A 28-Year Heritage of{" "}
+                <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 bg-clip-text text-transparent">
+                  Relentless Advocacy
+                </span>
+              </h1>
+
+              {/* Subheading */}
+              <p className="mt-5 text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+                Founded on the belief that justice belongs to the thoroughly prepared, Apex Legal & Associates defends corporations, executives, and individuals across high-stakes courtroom battlegrounds.
+              </p>
+
+              {/* Trust Badges Bar in Clean Light Cards */}
+              <div className="mt-8 flex flex-wrap items-center gap-4 pt-6 border-t border-slate-300/80 text-xs text-slate-800">
+                <div className="inline-flex items-center gap-2 rounded-xl bg-white/95 border border-slate-200/90 px-3.5 py-2 shadow-xs backdrop-blur-xs">
+                  <Scale className="h-4 w-4 text-amber-600 flex-shrink-0" />
+                  <span className="font-semibold text-slate-900">Est. 1998 in Lower Manhattan</span>
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-xl bg-white/95 border border-slate-200/90 px-3.5 py-2 shadow-xs backdrop-blur-xs">
+                  <Shield className="h-4 w-4 text-amber-600 flex-shrink-0" />
+                  <span className="font-semibold text-slate-900">Supreme Court Bar Admitted</span>
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-xl bg-white/95 border border-slate-200/90 px-3.5 py-2 shadow-xs backdrop-blur-xs">
+                  <Award className="h-4 w-4 text-amber-600 flex-shrink-0" />
+                  <span className="font-semibold text-slate-900">$140M+ Recovered for Clients</span>
+                </div>
+              </div>
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl font-serif">
-              A 28-Year Heritage of Relentless Advocacy
-            </h1>
-            <p className="mt-4 max-w-3xl text-base sm:text-lg text-slate-600 leading-relaxed">
-              Founded on the belief that justice belongs to the thoroughly prepared, Apex Legal & Associates defends corporations, executives, and individuals across high-stakes courtroom battlegrounds.
-            </p>
           </div>
         </section>
 
